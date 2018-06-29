@@ -21,6 +21,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @ComponentScan(basePackages= "com.example.springboot.dataservice.controller,com.example.springboot.dataservice.repository")
 @EnableJpaRepositories(basePackages = "com.example.springboot.dataservice.repository")
 @EnableEurekaClient
+
 public class SpringBootJobTwo {
 	private static final Logger log = LoggerFactory
 			.getLogger(SpringBootJobTwo.class);
