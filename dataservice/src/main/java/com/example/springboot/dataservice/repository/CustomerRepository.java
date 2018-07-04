@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.example.springboot.dataservice.entity.Customer;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, String>  {
-	public List<Customer>  findByUsername(String username);
+public interface CustomerRepository extends JpaRepository<Customer, String> {
+	public List<Customer> findByUsername(String username);
 }

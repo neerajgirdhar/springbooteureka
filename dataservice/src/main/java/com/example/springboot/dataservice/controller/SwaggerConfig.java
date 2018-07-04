@@ -12,16 +12,18 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
-@Profile(value = {"DI","FQA"})
+
+@Profile(value = { "DI", "FQA" })
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages="com.example.springboot.dataservice")
+@ComponentScan(basePackages = "com.example.springboot.dataservice")
 public class SwaggerConfig {
-   
-    	@Bean
-        public Docket api() { 
-    		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any()).paths(Predicates.not(PathSelectors.regex("/error.*"))).build();                                           
 
-    	}
-    }
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2).select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(Predicates.not(PathSelectors.regex("/error.*"))).build();
 
+	}
+}

@@ -1,27 +1,23 @@
 package com.example.springboot.job;
 
-import java.util.Iterator;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.SimpleCommandLinePropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @SpringBootApplication
 @EnableAutoConfiguration
 @EntityScan(basePackages = "com.example.springboot.dataservice.entity")
-@ComponentScan(basePackages= "com.example.springboot.dataservice.controller,com.example.springboot.dataservice.repository")
+@ComponentScan(basePackages = "com.example.springboot.dataservice.controller,com.example.springboot.dataservice.repository")
 @EnableJpaRepositories(basePackages = "com.example.springboot.dataservice.repository")
 @EnableEurekaClient
-
 public class SpringBootJobTwo {
 	private static final Logger log = LoggerFactory
 			.getLogger(SpringBootJobTwo.class);
@@ -39,16 +35,7 @@ public class SpringBootJobTwo {
 		log.info("springProfile Set-->" + springProfile);
 		String springProfile1 = System.getenv().get("spring.profiles.active");
 		log.info("springProfile1 Set(SYATEN)-->" + springProfile1);
-
-		/*log.info("*********************************************************************************************************");
 		
-		  if(conf != null) { log.info("conf Not NULL-->");
-		  
-		  Iterator<String> itr = conf.getBeanFactory().getBeanNamesIterator();
-		  while(itr.hasNext()) { log.info(itr.next()); } }
-		 
-		log.info("*********************************************************************************************************");
-		*/
 		SpringBootJobTwo springBootJob2 = (SpringBootJobTwo) conf
 				.getBean("springBootJobTwo");
 		springBootJob2.execute();

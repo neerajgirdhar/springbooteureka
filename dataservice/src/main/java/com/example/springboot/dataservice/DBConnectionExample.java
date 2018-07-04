@@ -54,9 +54,7 @@ public class DBConnectionExample {
 
 		if (connection != null) {
 			System.out.println("You made it, take control your database now!");
-		} else {
-			System.out.println("Failed to make connection!");
-		}
+		} 
 	}
 
 }

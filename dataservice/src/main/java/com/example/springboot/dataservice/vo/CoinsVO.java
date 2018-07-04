@@ -1,14 +1,12 @@
 package com.example.springboot.dataservice.vo;
 
-
-
 public class CoinsVO {
 
 	private String coin_ID;
 	private String coin_description;
 	private String coin_price;
-    
-public String getCoin_ID() {
+
+	public String getCoin_ID() {
 		return coin_ID;
 	}
 
@@ -32,6 +30,4 @@ public String getCoin_ID() {
 		this.coin_price = coin_price;
 	}
 
-
-	
 }
